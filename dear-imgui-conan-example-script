@@ -8,14 +8,14 @@ mkdir build
 cd build
 
 sudo apt install python3-pip
-pip install launchpadlib
-pip install testresources
-pip install conan
+pip3 install launchpadlib
+pip3 install testresources
+pip3 install conan
 
-conan install .. -s build_type=Release
-conan install .. -s build_type=Debug
-conan install .. -s build_type=Release --build glew --build glfw --build imgui
-conan install .. -s build_type=Debug --build glew --build glfw --build imgui
+~/.local/bin/conan install .. -s build_type=Release
+~/.local/bin/conan install .. -s build_type=Debug
+~/.local/bin/conan install .. -s build_type=Release --build glew --build glfw --build imgui
+~/.local/bin/conan install .. -s build_type=Debug --build glew --build glfw --build imgui
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 ./dear-imgui-conan
